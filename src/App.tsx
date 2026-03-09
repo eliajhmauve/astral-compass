@@ -21,7 +21,7 @@ const App = () => (
       <I18nProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/astral-compass">
           <Routes>
             <Route path="/" element={<Index />} />
             {toolRoutes.map((r) => (
