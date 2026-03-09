@@ -2,6 +2,19 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // SPA redirect handler for GitHub Pages
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>福青施老師 | 12 種命理工具一站式平台</title>
     <meta name="description" content="免費使用生命靈數、AI 塔羅、八字排盤、紫微斗數等 12 種中西命理工具。繁中/English 雙語。" />
